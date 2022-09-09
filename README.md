@@ -1,0 +1,2 @@
+# sqrestat
+Sqre stat service
