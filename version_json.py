@@ -27,7 +27,7 @@ def get_version_str():
 def inc_patch(commit=""):
     version_datas = get_dict()
     version_datas["Patch"] = str(int(version_datas["Patch"]) + 1)
-    version_datas["Commit"] = commit
+    version_datas["Commit"] = str(commit)
     version_datas["BuildTime"] = now.strftime("%Y%m%d_%H:%M:%S")
     with open(version_filepath, 'w') as version_file:
         json.dump(version_datas, version_file)
@@ -35,7 +35,7 @@ def inc_patch(commit=""):
 def inc_minor(commit=""):
     version_datas = get_dict()
     version_datas["Minor"] = str(version_datas["Minor"] + 1)
-    version_datas["Commit"] = commit
+    version_datas["Commit"] = str(commit)
     version_datas["BuildTime"] = now.strftime("%Y%m%d_%H:%M:%S")    
     with open(version_filepath, 'w') as version_file:
         json.dump(version_datas, version_file)
@@ -43,7 +43,7 @@ def inc_minor(commit=""):
 def inc_major(commit=""):
     version_datas = get_dict()
     version_datas["Major"] = str(version_datas["Major"] + 1)
-    version_datas["Commit"] = commit
+    version_datas["Commit"] = str(commit)
     version_datas["BuildTime"] = now.strftime("%Y%m%d_%H:%M:%S")    
     with open(version_filepath, 'w') as version_file:
         json.dump(version_datas, version_file)
