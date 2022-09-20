@@ -11,7 +11,7 @@ clean:
 build:	clean
 	
 	python version_json.py inc-patch ${COMMIT}
-	GOOS=linux go build -o ${APP}
+	GOOS=linux go build -o ${APP} cmd/${APP}/main.go
 
 run:	build
 	./${APP} -f dev.json
